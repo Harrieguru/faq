@@ -2,7 +2,6 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path'); // You need to require the 'path' module
 const app = express();
-const port = 3000;
 
 app.use(express.json()); // Add '()' to correctly initialize the middleware
 
@@ -34,6 +33,7 @@ app.post('/faqs',(req,res) => {
     });
 });
 
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
-    console.log(`app running on port ${port}`);
+    console.log(`Server running on port ${port}`);
 });
